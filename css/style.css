@@ -11,7 +11,7 @@ body {
 }
 
 header {
-    padding: 20px;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,29 +32,52 @@ nav ul {
 nav a {
     text-decoration: none;
     color: #111111;
-    font-weight: bold;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: #444444;
 }
 
 .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 40px;
     min-height: 80vh;
-    text-align: center;
+    align-items: center;
+}
+
+.hero-content {
+    grid-column: 1 / 2;
 }
 
 .hero h2 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 72px;
-    letter-spacing: 8px;
+    font-size: 64px;
+    letter-spacing: 6px;
     text-transform: uppercase;
+    line-height: 1.2;
     margin-bottom: 20px;
 }
 
+.hero .highlight {
+    background: #000000;
+    color: #ffffff;
+    padding: 0.25em 0.5em;
+}
+
 .hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #333333;
 }
 
 .kofi-button {
@@ -65,15 +88,19 @@ nav a {
     color: #000000;
     text-decoration: none;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 40px;
 }
 
+.kofi-button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
 .social-links {
     display: flex;
-    justify-content: center;
     gap: 30px;
     list-style: none;
 }
@@ -81,22 +108,35 @@ nav a {
 .social-links a {
     text-decoration: none;
     color: #111111;
-    font-weight: bold;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.social-links a:hover {
+    color: #444444;
 }
 
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         align-items: center;
+        gap: 20px;
     }
 
     nav ul {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
     }
 
     .hero h2 {
         font-size: 48px;
+        letter-spacing: 4px;
     }
 
     .hero p {
@@ -104,7 +144,7 @@ nav a {
     }
 
     .kofi-button {
-        font-size: 20px;
-        padding: 10px 20px;
+        font-size: 18px;
+        padding: 12px 24px;
     }
 }
