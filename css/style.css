@@ -11,7 +11,7 @@ body {
 }
 
 header {
-    padding: 20px 40px;
+    padding: 32px 64px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,14 +19,14 @@ header {
 
 .logo {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 24px;
-    letter-spacing: 2px;
+    font-size: 28px;
+    letter-spacing: 3px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 32px;
 }
 
 nav a {
@@ -46,52 +46,61 @@ nav a:hover {
 .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 40px;
+    padding: 120px 64px;
     min-height: 80vh;
     align-items: center;
+    gap: 64px;
 }
 
 .hero-content {
     grid-column: 1 / 2;
-    max-width: 400px; /* Constrain the content width for better balance */
+    max-width: 450px;
 }
 
-.hero h2 {
+.hero-image {
+    grid-column: 2 / 3;
+    background-color: #e0ded7; /* Placeholder color */
+    min-height: 400px;
+}
+
+.headline-small {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 48px; /* Smaller for "I_ AM_" */
-    letter-spacing: 6px;
+    font-size: 36px;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    line-height: 1.2;
-    margin-bottom: 20px;
+    color: #333333;
 }
 
-.hero h2 .highlight {
-    font-size: 72px; /* Larger for "SPOONYDUDER_" */
+.highlight {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 96px;
+    letter-spacing: 8px;
     background: #000000;
     color: #ffffff;
-    padding: 0.15em 0.3em; /* Tighter padding for a punchier look */
+    padding: 0.1em 0.3em;
     display: inline-block;
+    line-height: 1.2;
 }
 
-.hero p {
+.subtitle {
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 300;
-    font-size: 16px;
-    margin-bottom: 48px;
+    font-size: 18px;
+    margin: 32px 0 48px;
     color: #333333;
 }
 
 .kofi-button {
     display: inline-block;
-    padding: 10px 20px; /* Smaller padding for a more elegant button */
+    padding: 12px 24px;
     border: 2px solid #000000;
     background-color: #ffffff;
     color: #000000;
     text-decoration: none;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 48px;
@@ -130,37 +139,45 @@ nav a:hover {
     header {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 24px;
+        padding: 24px;
     }
 
     nav ul {
         flex-direction: row;
-        gap: 15px;
+        gap: 16px;
     }
 
     .hero {
         grid-template-columns: 1fr;
-        padding: 40px 20px;
+        padding: 64px 24px;
+        gap: 0;
     }
 
     .hero-content {
         max-width: 100%;
     }
 
-    .hero h2 {
-        font-size: 36px;
+    .hero-image {
+        display: none; /* Hide placeholder on mobile */
     }
 
-    .hero h2 .highlight {
-        font-size: 48px;
+    .headline-small {
+        font-size: 24px;
     }
 
-    .hero p {
-        font-size: 14px;
+    .highlight {
+        font-size: 64px;
+        letter-spacing: 6px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        margin: 24px 0 32px;
     }
 
     .kofi-button {
-        font-size: 14px;
-        padding: 8px 16px;
+        font-size: 16px;
+        padding: 10px 20px;
     }
 }
