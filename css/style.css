@@ -48,50 +48,53 @@ nav a:hover {
     grid-template-columns: 1fr 1fr;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 64px 40px;
+    padding: 80px 40px;
     min-height: 80vh;
     align-items: center;
 }
 
 .hero-content {
     grid-column: 1 / 2;
+    max-width: 400px; /* Constrain the content width for better balance */
 }
 
 .hero h2 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 64px;
+    font-size: 48px; /* Smaller for "I_ AM_" */
     letter-spacing: 6px;
     text-transform: uppercase;
     line-height: 1.2;
     margin-bottom: 20px;
 }
 
-.hero .highlight {
+.hero h2 .highlight {
+    font-size: 72px; /* Larger for "SPOONYDUDER_" */
     background: #000000;
     color: #ffffff;
-    padding: 0.25em 0.5em;
+    padding: 0.15em 0.3em; /* Tighter padding for a punchier look */
+    display: inline-block;
 }
 
 .hero p {
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 300;
-    font-size: 20px;
-    margin-bottom: 40px;
+    font-size: 16px;
+    margin-bottom: 48px;
     color: #333333;
 }
 
 .kofi-button {
     display: inline-block;
-    padding: 15px 30px;
-    border: 3px solid #000000;
+    padding: 10px 20px; /* Smaller padding for a more elegant button */
+    border: 2px solid #000000;
     background-color: #ffffff;
     color: #000000;
     text-decoration: none;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
 }
 
 .kofi-button:hover {
@@ -99,9 +102,15 @@ nav a:hover {
     color: #ffffff;
 }
 
+.separator {
+    border: none;
+    border-top: 1px solid #111111;
+    margin-bottom: 32px;
+}
+
 .social-links {
     display: flex;
-    gap: 30px;
+    gap: 24px;
     list-style: none;
 }
 
@@ -110,7 +119,7 @@ nav a:hover {
     color: #111111;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .social-links a:hover {
@@ -134,17 +143,24 @@ nav a:hover {
         padding: 40px 20px;
     }
 
+    .hero-content {
+        max-width: 100%;
+    }
+
     .hero h2 {
+        font-size: 36px;
+    }
+
+    .hero h2 .highlight {
         font-size: 48px;
-        letter-spacing: 4px;
     }
 
     .hero p {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .kofi-button {
-        font-size: 18px;
-        padding: 12px 24px;
+        font-size: 14px;
+        padding: 8px 16px;
     }
 }
