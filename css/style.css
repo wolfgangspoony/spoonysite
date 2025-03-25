@@ -1,208 +1,159 @@
-/* Updated Styles for Spoony Duder */
+:root {
+    --bg-color: #f5f0e6;
+    --text-primary: #111111;
+    --text-secondary: #444444;
+    --accent-black: #000000;
+    --accent-white: #ffffff;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 0.3s ease;
 }
 
 body {
-    background-color: #f5f0e6; /* Warmer, softer cream tone */
-    color: #111111;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
     font-family: 'IBM Plex Sans', sans-serif;
     line-height: 1.6;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
 header {
-    padding: 32px 64px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 4rem;
 }
 
 .logo {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
+    font-size: 1.5rem;
     letter-spacing: 3px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 32px;
-}
-
-nav a {
+    color: var(--text-primary);
     text-decoration: none;
-    color: #111111;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    position: relative;
-    overflow: hidden;
+    letter-spacing: 2px;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
 }
 
-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: #111111;
-    transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-    width: 100%;
+.nav-links a:hover {
+    color: var(--text-primary);
 }
 
 .hero {
     display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 64px;
-    align-items: center;
-    opacity: 0;
-    animation: fadeIn 1s forwards 0.5s;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .hero-content {
-    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.headline-small {
+.pre-headline {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 4px;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: var(--text-secondary);
     text-transform: uppercase;
-    color: #666666;
-    display: block;
-    margin-bottom: 8px;
 }
 
-.highlight {
+.main-headline {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 96px;
+    font-size: 5rem;
     letter-spacing: 8px;
-    background: #000000;
-    color: #ffffff;
-    padding: 0.1em 0.3em;
+    background: var(--accent-black);
+    color: var(--accent-white);
     display: inline-block;
+    padding: 0.2em 0.4em;
     line-height: 1.2;
 }
 
 .subtitle {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.125rem;
+    color: var(--text-secondary);
     font-weight: 300;
-    font-size: 18px;
-    margin: 24px 0 32px;
-    color: #333333;
 }
 
-.kofi-button {
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.cta-button {
     display: inline-block;
-    padding: 12px 24px;
-    border: 2px solid #000000;
-    background-color: #ffffff;
-    color: #000000;
+    border: 2px solid var(--accent-black);
+    color: var(--text-primary);
     text-decoration: none;
+    padding: 0.75rem 1.5rem;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 32px;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
+    letter-spacing: 2px;
+    align-self: flex-start;
+    transition: all 0.3s ease;
 }
 
-.kofi-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background-color: #000000;
-    transition: left 0.3s ease;
-    z-index: -1;
-}
-
-.kofi-button:hover::before {
-    left: 0;
-}
-
-.kofi-button:hover {
-    color: #ffffff;
-}
-
-.separator {
-    border: none;
-    border-top: 1px solid #111111;
-    margin-bottom: 24px;
+.cta-button:hover {
+    background: var(--accent-black);
+    color: var(--accent-white);
 }
 
 .social-links {
     display: flex;
-    gap: 24px;
-    list-style: none;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+    gap: 1.5rem;
 }
 
 .social-links a {
     text-decoration: none;
-    color: #333333;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    position: relative;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    opacity: 1;
+    color: var(--text-primary);
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
     header {
         flex-direction: column;
-        padding: 24px;
+        gap: 1rem;
+        margin-bottom: 2rem;
     }
 
-    nav ul {
-        gap: 16px;
+    .nav-links {
+        gap: 1rem;
     }
 
-    .hero {
-        flex-direction: column;
-        padding: 32px 24px;
-        text-align: center;
-    }
-
-    .headline-small {
-        font-size: 20px;
-    }
-
-    .highlight {
-        font-size: 64px;
-        letter-spacing: 6px;
-    }
-
-    .subtitle {
-        font-size: 16px;
-    }
-
-    .social-links {
-        justify-content: center;
+    .main-headline {
+        font-size: 3rem;
+        letter-spacing: 4px;
     }
 }
