@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* BACKGROUND IMAGE */
+/* BACKGROUND LAYER */
 .bg {
   position: fixed;
   top: 0;
@@ -19,17 +19,17 @@
   background-repeat: no-repeat;
 }
 
-/* Use mobile background under 768px width */
-@media screen and (max-width: 768px) {
+/* Only override background for actual portrait screens */
+@media screen and (orientation: portrait) {
   .bg {
     background-image: url("../images/bgmobile.png");
   }
 }
 
-/* BASE LAYOUT */
+/* BASE PAGE */
 html, body {
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
   font-family: 'IBM Plex Sans', sans-serif;
   color: #fff;
   overflow: hidden;
@@ -71,7 +71,7 @@ nav a:hover {
   color: #ccc;
 }
 
-/* HERO */
+/* HERO CENTER */
 .hero {
   flex: 1;
   display: flex;
@@ -93,7 +93,7 @@ nav a:hover {
 
 .pretext {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
@@ -157,7 +157,7 @@ nav a:hover {
   color: #999;
 }
 
-/* MOBILE FIXES */
+/* MOBILE SIZE ADJUSTMENTS */
 @media (max-width: 768px) {
   .maintext {
     font-size: 48px;
