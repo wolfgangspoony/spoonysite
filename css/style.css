@@ -10,21 +10,24 @@ html, body {
   height: 100vh;
   width: 100vw;
   background-color: #000;
-  background-image: url("../images/bgdesktop.png");
+  background-image: url("/images/bgdesktop.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: #fff;
   font-family: 'IBM Plex Sans', sans-serif;
-  overflow: hidden;
+  overflow: auto; /* Let mobile scroll if needed */
   display: flex;
   flex-direction: column;
 }
 
-/* OVERRIDE WITH MOBILE BACKGROUND */
+/* MOBILE BACKGROUND SWAP */
 @media screen and (max-width: 768px) {
   html, body {
-    background-image: url("../images/bgmobile.png") !important;
+    background-image: url("/images/bgmobile.png") !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
@@ -138,8 +141,10 @@ nav a:hover {
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 40px 0;
-  margin-top: auto;
   background-color: transparent;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .link-bar a {
@@ -152,7 +157,7 @@ nav a:hover {
   color: #999;
 }
 
-/* RESPONSIVE TEXT SCALING */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .maintext {
     font-size: 48px;
@@ -170,6 +175,7 @@ nav a:hover {
   .link-bar {
     font-size: 14px;
     flex-direction: column;
+    align-items: center;
     gap: 12px;
   }
 }
