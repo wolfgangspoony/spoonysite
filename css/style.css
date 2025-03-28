@@ -8,7 +8,7 @@
 /* BASE STYLING */
 html, body {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   font-family: 'IBM Plex Sans', sans-serif;
   color: #fff;
   background-color: #000;
@@ -20,8 +20,8 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: -1;
   background-image: url("../images/bgdesktop.png");
   background-size: cover;
@@ -29,7 +29,7 @@ html, body {
   background-repeat: no-repeat;
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (max-width: 768px) {
   .bg {
     background-image: url("../images/bgmobile.png");
   }
