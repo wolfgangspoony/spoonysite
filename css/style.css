@@ -13,23 +13,25 @@
   width: 100vw;
   height: 100vh;
   z-index: -1;
+  background-color: #ff0000; /* Red fallback to debug */
   background-image: url("../images/bgdesktop.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* Only override background for actual portrait screens */
-@media screen and (orientation: portrait) {
+/* Mobile portrait override */
+@media screen and (max-width: 768px) {
   .bg {
     background-image: url("../images/bgmobile.png");
   }
 }
 
-/* BASE PAGE */
+/* BASE */
 html, body {
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
+  min-height: 100vh; /* Locks height fully */
   font-family: 'IBM Plex Sans', sans-serif;
   color: #fff;
   overflow: hidden;
@@ -71,7 +73,7 @@ nav a:hover {
   color: #ccc;
 }
 
-/* HERO CENTER */
+/* HERO */
 .hero {
   flex: 1;
   display: flex;
@@ -144,6 +146,7 @@ nav a:hover {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-top: 20px;
+  margin-bottom: 20px; /* Breathing room */
   flex-wrap: wrap;
 }
 
@@ -157,7 +160,7 @@ nav a:hover {
   color: #999;
 }
 
-/* MOBILE SIZE ADJUSTMENTS */
+/* MOBILE ADJUSTMENTS */
 @media (max-width: 768px) {
   .maintext {
     font-size: 48px;
