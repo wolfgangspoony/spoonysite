@@ -24,42 +24,40 @@ body {
   align-items: center;
   padding: 15px 40px;
   background-color: #000;
-  border-bottom: 1px solid #fff;
-  position: fixed; /* Sleek fixed header */
+  border-bottom: 1px solid #fff; /* Sleek line */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1); /* Subtle glow */
 }
 
 .logo {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 28px;
-  letter-spacing: 3px;
+  font-size: 24px;
+  letter-spacing: 2px;
   color: #fff;
-  text-transform: uppercase;
   transition: transform 0.3s ease;
 }
 
 .logo:hover {
-  transform: scale(1.05); /* Slight pop on hover */
+  transform: scale(1.05); /* Sleek hover effect */
 }
 
 /* NAV */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 20px;
 }
 
 nav a {
   text-decoration: none;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   color: #fff;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   position: relative;
   transition: color 0.3s ease;
 }
@@ -80,7 +78,7 @@ nav a:hover {
 }
 
 nav a:hover::after {
-  width: 100%; /* Sleek underline effect */
+  width: 100%; /* Sleek underline */
 }
 
 /* HERO */
@@ -173,11 +171,11 @@ nav a:hover::after {
   }
 
   .site-header {
-    padding: 10px 20px;
+    padding: 10px 15px;
   }
 
   .logo {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   nav ul {
@@ -185,7 +183,7 @@ nav a:hover::after {
   }
 
   nav a {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .pretext {
