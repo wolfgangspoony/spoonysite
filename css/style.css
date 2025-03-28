@@ -1,3 +1,5 @@
+
+
 /* style.css */
 * {
   margin: 0;
@@ -5,35 +7,35 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'IBM Plex Sans', sans-serif;
-  background: #f6efe5;
-  color: #111;
-  height: 100vh;
+html, body {
+  height: 100%;
+  width: 100%;
   overflow: hidden;
-  position: relative;
+  background: #000;
+  color: #fff;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .poster {
-  position: relative;
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: 80px;
-  background: repeating-linear-gradient(135deg, #f6efe5, #f6efe5 10px, #ece5d7 10px, #ece5d7 20px);
+  text-align: center;
+  padding: 5vh 5vw;
 }
 
 .name-block {
-  margin-bottom: 40px;
+  margin-bottom: 2vh;
 }
 
 h1 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 5rem;
-  background-color: #000;
-  color: #fff;
+  font-size: 7vw;
+  background-color: #fff;
+  color: #000;
   display: inline-block;
   padding: 0.2em 0.6em;
   letter-spacing: 4px;
@@ -41,75 +43,79 @@ h1 {
 
 .pretext {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.5rem;
+  font-size: 2.5vw;
   letter-spacing: 3px;
-  color: #555;
-  margin-top: 12px;
+  color: #aaa;
+  margin-top: 1vh;
   text-transform: uppercase;
 }
 
 .tagline {
   font-weight: 300;
-  font-size: 1rem;
-  color: #333;
-  margin: 16px 0 32px 0;
+  font-size: 1.8vw;
+  color: #ccc;
+  margin: 2vh 0 3vh 0;
 }
 
 .kofi-btn {
-  padding: 12px 24px;
-  border: 2px solid #111;
+  padding: 1vh 2vw;
+  border: 2px solid #fff;
   font-family: 'Bebas Neue', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-decoration: none;
-  color: #111;
+  color: #fff;
   transition: 0.3s ease;
 }
 
 .kofi-btn:hover {
-  background-color: #111;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
 }
 
 .link-bar {
   position: absolute;
-  bottom: 40px;
-  left: 80px;
+  bottom: 2vh;
   display: flex;
-  gap: 24px;
-  font-size: 0.75rem;
+  gap: 2vw;
+  font-size: 1vw;
   text-transform: uppercase;
-  color: #666;
+  color: #999;
 }
 
 .link-bar a {
   text-decoration: none;
-  color: #666;
+  color: #999;
   transition: 0.3s ease;
 }
 
 .link-bar a:hover {
-  color: #000;
+  color: #fff;
 }
 
 @media (max-width: 768px) {
-  .poster {
-    padding: 40px 20px;
-    align-items: center;
-    text-align: center;
-  }
-
-  .link-bar {
-    position: static;
-    margin-top: 40px;
-    justify-content: center;
-  }
-
   h1 {
-    font-size: 3rem;
+    font-size: 12vw;
   }
 
   .pretext {
-    font-size: 1.1rem;
+    font-size: 4vw;
+  }
+
+  .tagline {
+    font-size: 3.5vw;
+  }
+
+  .kofi-btn {
+    font-size: 3vw;
+    padding: 1.2vh 4vw;
+  }
+
+  .link-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+    font-size: 3vw;
+    bottom: 4vh;
   }
 }
