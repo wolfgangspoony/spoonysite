@@ -10,11 +10,22 @@ html, body {
   height: 100vh;
   width: 100vw;
   background-color: #000;
+  background-image: url("bgdesktop.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #fff;
   font-family: 'IBM Plex Sans', sans-serif;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+
+/* MOBILE BACKGROUND */
+@media (max-width: 768px) {
+  html, body {
+    background-image: url("bgmobile.png");
+  }
 }
 
 /* HEADER */
@@ -72,7 +83,7 @@ nav a:hover {
 
 .pretext {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 32px; /* NOW proportional */
+  font-size: 32px;
   letter-spacing: 3px;
   color: #fff;
   text-transform: uppercase;
@@ -123,13 +134,12 @@ nav a:hover {
   display: flex;
   justify-content: center;
   gap: 48px;
-  font-size: 18px; /* ✅ Enlarged */
+  font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 40px 0;
   margin-top: auto;
-  background-color: #000;
-  border-top: 1px solid #222;
+  background-color: transparent;
 }
 
 .link-bar a {
