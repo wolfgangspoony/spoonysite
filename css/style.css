@@ -7,11 +7,11 @@
 
 /* BASE */
 html, body {
-  background-color: #000;
-  font-family: 'IBM Plex Sans', sans-serif;
-  color: #fff;
   height: 100vh;
   width: 100vw;
+  background-color: #000;
+  color: #fff;
+  font-family: 'IBM Plex Sans', sans-serif;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,6 @@ html, body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background-color: transparent;
   border-bottom: 1px solid #222;
 }
 
@@ -60,53 +59,49 @@ nav a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   gap: 20px;
-  padding: 20px;
-}
-
-.main-box {
-  border: 3px solid #fff;
-  padding: 30px 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  text-align: center;
 }
 
 .pretext {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 22px;
+  font-size: 28px;
   letter-spacing: 3px;
   color: #fff;
-  text-transform: uppercase;
+  margin-bottom: -10px;
+}
+
+.main-box {
+  border: 3px solid #fff;
+  padding: 20px 50px;
+  display: inline-block;
 }
 
 .maintext {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 72px;
+  font-size: 64px;
   letter-spacing: 6px;
+  line-height: 1;
   color: #fff;
 }
 
 .tagline {
   font-weight: 300;
   font-size: 16px;
-  color: #fff;
+  color: #ccc;
   max-width: 500px;
 }
 
 /* KO-FI BUTTON */
 .kofi-btn {
-  padding: 12px 28px;
+  padding: 12px 24px;
   border: 2px solid #fff;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  text-decoration: none;
   color: #fff;
   background-color: transparent;
+  letter-spacing: 2px;
   transition: all 0.3s ease;
 }
 
@@ -119,23 +114,23 @@ nav a:hover {
 .link-bar {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  font-size: 14px;
+  gap: 40px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  padding: 24px;
+  padding: 30px 0;
   background-color: #000;
-  border-top: 1px solid #222;
+  margin-top: auto;
 }
 
 .link-bar a {
-  text-decoration: none;
   color: #fff;
-  transition: 0.3s ease;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .link-bar a:hover {
-  color: #ccc;
+  color: #999;
 }
 
 /* RESPONSIVE */
@@ -143,3 +138,19 @@ nav a:hover {
   .maintext {
     font-size: 48px;
   }
+
+  .pretext {
+    font-size: 20px;
+  }
+
+  .kofi-btn {
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+
+  .link-bar {
+    font-size: 14px;
+    gap: 20px;
+    flex-direction: column;
+  }
+}
