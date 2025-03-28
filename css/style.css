@@ -10,7 +10,7 @@ html, body {
   height: 100vh;
   width: 100vw;
   background-color: #000;
-  background-image: url("bgdesktop.png");
+  background-image: url("../bgdesktop.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -24,7 +24,7 @@ html, body {
 /* MOBILE BACKGROUND */
 @media (max-width: 768px) {
   html, body {
-    background-image: url("bgmobile.png");
+    background-image: url("../bgmobile.png");
   }
 }
 
