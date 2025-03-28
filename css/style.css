@@ -5,30 +5,38 @@
   box-sizing: border-box;
 }
 
-/* BASE DESKTOP BACKGROUND + CORE LAYOUT */
-html, body {
+/* BACKGROUND IMAGE LAYER */
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 100vw;
+  z-index: -1;
   background-color: #000;
   background-image: url("/images/bgdesktop.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: #fff;
-  font-family: 'IBM Plex Sans', sans-serif;
-  overflow: auto; /* Let mobile scroll if needed */
-  display: flex;
-  flex-direction: column;
+  background-attachment: fixed;
 }
 
-/* MOBILE BACKGROUND SWAP */
-@media screen and (max-width: 768px) {
-  html, body {
-    background-image: url("/images/bgmobile.png") !important;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+/* SWAP TO MOBILE BACKGROUND ON TALL SCREENS */
+@media screen and (max-aspect-ratio: 3/4) {
+  .bg {
+    background-image: url("/images/bgmobile.png");
   }
+}
+
+/* BASE STYLING */
+html, body {
+  height: 100vh;
+  width: 100vw;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
 }
 
 /* HEADER */
@@ -37,14 +45,13 @@ html, body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  border-bottom: 1px solid #222;
+  z-index: 1;
 }
 
 .logo {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 24px;
   letter-spacing: 2px;
-  color: #fff;
 }
 
 nav ul {
@@ -73,38 +80,34 @@ nav a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 18px;
   text-align: center;
+  gap: 20px;
+  z-index: 1;
 }
 
 .text-stack {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .pretext {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 32px;
+  font-size: 24px;
   letter-spacing: 3px;
-  color: #fff;
   text-transform: uppercase;
-  margin-bottom: 0;
 }
 
 .main-box {
   border: 4px solid #fff;
   padding: 18px 36px;
-  display: inline-block;
 }
 
 .maintext {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 72px;
+  font-size: 64px;
   letter-spacing: 6px;
-  color: #fff;
-  line-height: 1;
 }
 
 .tagline {
@@ -125,6 +128,7 @@ nav a:hover {
   background-color: transparent;
   letter-spacing: 2px;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .kofi-btn:hover {
@@ -140,10 +144,8 @@ nav a:hover {
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  padding: 40px 0;
-  background-color: transparent;
   margin-top: 40px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   flex-wrap: wrap;
 }
 
@@ -164,7 +166,7 @@ nav a:hover {
   }
 
   .pretext {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .kofi-btn {
