@@ -5,38 +5,36 @@
   box-sizing: border-box;
 }
 
-/* BACKGROUND IMAGE LAYER */
+/* BACKGROUND IMAGE */
 .bg {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
   z-index: -1;
-  background-color: #000;
-  background-image: url("/images/bgdesktop.png");
+  background-image: url("../images/bgdesktop.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
-/* SWAP TO MOBILE BACKGROUND ON TALL SCREENS */
-@media screen and (max-aspect-ratio: 3/4) {
+/* Use mobile background under 768px width */
+@media screen and (max-width: 768px) {
   .bg {
-    background-image: url("/images/bgmobile.png");
+    background-image: url("../images/bgmobile.png");
   }
 }
 
-/* BASE STYLING */
+/* BASE LAYOUT */
 html, body {
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
   font-family: 'IBM Plex Sans', sans-serif;
   color: #fff;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  overflow: auto;
 }
 
 /* HEADER */
@@ -73,7 +71,7 @@ nav a:hover {
   color: #ccc;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
   flex: 1;
   display: flex;
@@ -83,6 +81,7 @@ nav a:hover {
   text-align: center;
   gap: 20px;
   z-index: 1;
+  padding: 0 20px;
 }
 
 .text-stack {
@@ -136,7 +135,7 @@ nav a:hover {
   color: #000;
 }
 
-/* SOCIAL LINKS */
+/* SOCIALS */
 .link-bar {
   display: flex;
   justify-content: center;
@@ -144,8 +143,7 @@ nav a:hover {
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-top: 40px;
-  margin-bottom: 24px;
+  margin-top: 20px;
   flex-wrap: wrap;
 }
 
@@ -159,14 +157,14 @@ nav a:hover {
   color: #999;
 }
 
-/* RESPONSIVE */
+/* MOBILE FIXES */
 @media (max-width: 768px) {
   .maintext {
     font-size: 48px;
   }
 
   .pretext {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .kofi-btn {
