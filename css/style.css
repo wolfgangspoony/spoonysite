@@ -12,7 +12,7 @@ html, body {
   font-family: 'IBM Plex Sans', sans-serif;
   color: #fff;
   background-color: #000;
-  overflow: hidden;
+  overflow-x: hidden; /* Changed to x-only to allow vertical scroll if needed */
   position: relative;
 }
 
@@ -21,8 +21,8 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
   z-index: -1;
   background-image: url("../images/bgdesktop.png");
   background-size: cover;
@@ -44,6 +44,8 @@ html, body {
   padding: 16px 24px;
   z-index: 2;
   position: relative;
+  max-width: 1200px; /* Constrain width for larger screens */
+  margin: 0 auto; /* Center it */
 }
 
 .logo {
@@ -79,10 +81,12 @@ nav a:hover {
   justify-content: center;
   padding: 40px 20px;
   text-align: center;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 64px); /* Adjusted for header height */
   gap: 24px;
   z-index: 2;
   position: relative;
+  max-width: 1200px; /* Constrain width for larger screens */
+  margin: 0 auto; /* Center it */
 }
 
 .text-stack {
@@ -107,7 +111,7 @@ nav a:hover {
 
 .maintext {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 60px;
+  font-size: clamp(40px, 5vw, 60px); /* Scales with viewport width */
   letter-spacing: 6px;
 }
 
@@ -164,7 +168,7 @@ nav a:hover {
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
   .maintext {
-    font-size: 42px;
+    font-size: clamp(30px, 8vw, 42px); /* Adjusted for mobile */
   }
 
   .pretext {
