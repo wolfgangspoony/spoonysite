@@ -7,74 +7,55 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@300;400;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css?v=1.0" />
   <style>
-    .music-hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      min-height: 100vh;
-      padding: 40px 20px;
-      gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-      mix-blend-mode: exclusion;
+    .hero {
+      padding-top: 60px;
+      padding-bottom: 40px;
     }
 
-    .main-box a {
-      display: inline-block;
-      text-decoration: none;
-      color: #fff;
-    }
-
-    .album-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    .album-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 24px;
+      margin-top: 48px;
+      width: 100%;
+      max-width: 800px;
     }
 
-    .album-row a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
+    .album-grid a {
+      text-align: center;
       color: #fff;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 13px;
-      letter-spacing: 2px;
+      text-decoration: none;
+      transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
-    .album-row img {
-      width: 130px;
+    .album-grid img {
+      width: 100%;
       border: 2px solid #fff;
       opacity: 0.5;
-      transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
-    .album-row a:hover img {
-      opacity: 1;
-      transform: scale(1.05);
-      box-shadow: 0 0 12px rgba(255,255,255,0.3);
+    .album-grid a:hover img {
+      opacity: 0.75;
+      transform: scale(1.03);
     }
 
-    .album-label {
-      margin-top: 8px;
+    .album-grid div {
+      margin-top: 12px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14px;
+      letter-spacing: 2px;
       color: #ccc;
     }
 
-    @media (max-width: 768px) {
-      .album-row img {
-        width: 100px;
-      }
+    .link-bar {
+      margin-top: 60px;
+    }
 
-      .album-label {
-        font-size: 12px;
-        text-align: center;
-      }
-
-      .maintext {
-        font-size: clamp(24px, 8vw, 36px);
+    @media (max-height: 800px) {
+      .hero {
+        transform: scale(1);
+        padding-top: 40px;
+        padding-bottom: 20px;
       }
     }
   </style>
@@ -91,31 +72,42 @@
     </nav>
   </header>
 
-  <main class="music-hero">
+  <main class="hero">
     <div class="text-stack">
       <div class="main-box">
-        <a href="https://soundcloud.com/spoondad" class="maintext">
+        <a href="https://soundcloud.com/spoondad" class="maintext" style="text-decoration: none; color: #fff;">
           CLICK HERE TO HEAR MY LATEST SHIT
         </a>
       </div>
     </div>
-    <div class="album-row">
+
+    <div class="tagline" style="margin-top: 32px;">
+      A taste of the underground. Click a tape below.
+    </div>
+
+    <div class="album-grid">
       <a href="https://spoonyduder.bandcamp.com/album/the-wolfgang-mixtape" target="_blank">
-        <img src="https://f4.bcbits.com/img/a0771355221_10.jpg" alt="Wolfgang Mixtape" />
-        <div class="album-label">Wolfgang</div>
+        <img src="https://f4.bcbits.com/img/a0771355221_10.jpg" alt="The Wolfgang Mixtape" />
+        <div>The Wolfgang Mixtape</div>
       </a>
       <a href="https://spoonyduder.bandcamp.com/album/tape-ii-the-second-mixtape" target="_blank">
         <img src="https://f4.bcbits.com/img/a1548123822_10.jpg" alt="Tape II" />
-        <div class="album-label">Tape II</div>
+        <div>Tape II</div>
       </a>
       <a href="https://spoonyduder.bandcamp.com/album/gamer-girl-bath-water" target="_blank">
         <img src="https://f4.bcbits.com/img/a3260859751_10.jpg" alt="Gamer Girl Bath Water" />
-        <div class="album-label">Bath Water</div>
+        <div>Gamer Girl Bath Water</div>
       </a>
       <a href="https://spoonyduder.bandcamp.com/album/mixtape-four" target="_blank">
         <img src="https://f4.bcbits.com/img/a0009804033_10.jpg" alt="Mixtape Four" />
-        <div class="album-label">Mixtape Four</div>
+        <div>Mixtape Four</div>
       </a>
+    </div>
+
+    <div class="link-bar">
+      <a href="https://www.tiktok.com/@5poon4dud3r">TikTok</a>
+      <a href="https://www.youtube.com/@spoonyduder">YouTube</a>
+      <a href="https://soundcloud.com/spoondad">SoundCloud</a>
     </div>
   </main>
 </body>
