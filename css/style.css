@@ -61,7 +61,7 @@ nav a:hover {
   color: #ccc;
 }
 
-/* HERO SECTION (for index.html) */
+/* HERO SECTION */
 .hero {
   display: flex;
   flex-direction: column;
@@ -80,14 +80,6 @@ nav a:hover {
   box-sizing: border-box;
 }
 
-/* Music-specific hero styles (for music.html) */
-.music-hero {
-  padding: 10px 20px; /* Reduced padding for music.html */
-  min-height: auto; /* Removes the tall height */
-  gap: 8px; /* Smaller gap between "Click Here" and tagline */
-}
-
-/* TEXT STACK */
 .text-stack {
   display: flex;
   flex-direction: column;
@@ -172,10 +164,6 @@ nav a:hover {
 
   .hero {
     transform: none;
-  }
-
-  .music-hero {
-    padding: 5px 20px; /* Even smaller padding for mobile */
   }
 
   .maintext {
