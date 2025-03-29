@@ -21,6 +21,14 @@ html, body {
   background-attachment: fixed;
 }
 
+/* CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
 /* HEADER */
 .site-header {
   display: flex;
@@ -29,9 +37,6 @@ html, body {
   padding: 16px 24px;
   z-index: 2;
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  mix-blend-mode: exclusion;
   width: 100%;
   box-sizing: border-box;
 }
@@ -73,9 +78,6 @@ nav a:hover {
   gap: 32px;
   z-index: 2;
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  mix-blend-mode: exclusion;
   width: 100%;
   box-sizing: border-box;
 }
@@ -160,10 +162,6 @@ nav a:hover {
 @media (max-width: 768px) {
   body {
     background-image: url("https://i.imgur.com/aF1FJMc.png");
-  }
-
-  .hero {
-    transform: none;
   }
 
   .maintext {
