@@ -23,6 +23,8 @@
       padding: 12px 24px;
       display: inline-block;
       transition: box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
 
     .main-box.playing {
@@ -51,6 +53,8 @@
       transition: 0.3s ease;
       cursor: pointer;
       display: inline-block;
+      position: relative;
+      z-index: 2;
     }
 
     .maintext span.bold {
@@ -61,55 +65,41 @@
       color: #ccc;
     }
 
-    /* CRAZY GLITCH EFFECT WHEN PLAYING */
+    /* GLITCH TEXT ANIMATION */
     .main-box.playing .maintext {
-      animation: glitch 0.7s infinite;
-      position: relative;
-    }
-
-    .main-box.playing .maintext::before,
-    .main-box.playing .maintext::after {
-      content: attr(data-glitch);
-      position: absolute;
-      left: 0;
-      width: 100%;
-      opacity: 0.7;
-      clip: rect(0, 900px, 0, 0);
-    }
-
-    .main-box.playing .maintext::before {
-      animation: glitchTop 0.6s infinite linear alternate-reverse;
-      color: #ff00c8;
-    }
-
-    .main-box.playing .maintext::after {
-      animation: glitchBottom 0.6s infinite linear alternate-reverse;
-      color: #00fff9;
+      animation: glitch 0.6s infinite;
     }
 
     @keyframes glitch {
-      0% { transform: none; }
-      20% { transform: skew(-2deg); }
-      40% { transform: skew(2deg) scale(1.02); }
-      60% { transform: translate(2px, -2px); }
-      80% { transform: translate(-2px, 2px); }
-      100% { transform: none; }
+      0% { transform: translate(0, 0); }
+      20% { transform: translate(-1px, 1px); }
+      40% { transform: translate(1px, -1px); }
+      60% { transform: translate(-2px, 0); }
+      80% { transform: translate(2px, 1px); }
+      100% { transform: translate(0, 0); }
     }
 
-    @keyframes glitchTop {
-      0% { clip: rect(0, 900px, 0, 0); }
-      10% { clip: rect(0, 900px, 100px, 0); }
-      20% { clip: rect(0, 900px, 0, 0); }
-      30% { clip: rect(10px, 900px, 80px, 0); }
-      100% { clip: rect(0, 900px, 0, 0); }
+    /* CHAOTIC SYMBOLS LAYER */
+    .chaos {
+      font-family: monospace;
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: rgba(255, 255, 255, 0.06);
+      font-size: 28px;
+      line-height: 1.2;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      white-space: pre-wrap;
+      overflow: hidden;
+      animation: chaosScroll 1.5s infinite linear alternate;
     }
 
-    @keyframes glitchBottom {
-      0% { clip: rect(0, 900px, 0, 0); }
-      10% { clip: rect(60px, 900px, 120px, 0); }
-      20% { clip: rect(0, 900px, 0, 0); }
-      30% { clip: rect(40px, 900px, 100px, 0); }
-      100% { clip: rect(0, 900px, 0, 0); }
+    @keyframes chaosScroll {
+      0% { transform: translateY(0); opacity: 0.2; }
+      100% { transform: translateY(-10px); opacity: 0.6; }
     }
 
     .tagline {
@@ -219,12 +209,13 @@
 
   <main class="hero">
     <div class="main-box" id="mainBox">
-      <a href="#" class="maintext" id="glitchText" data-glitch="CLICK HERE TO HEAR MY LATEST SHIT" onclick="playSpoony(); return false;">
+      <div class="chaos" id="chaosLayer"></div>
+      <a href="#" class="maintext" id="glitchText" onclick="playSpoony(); return false;">
         CLICK <span class="bold">HERE</span> TO HEAR MY <span class="bold">LATEST</span> SHIT
       </a>
     </div>
     <div class="tagline">
-      Old tapes. Click below for SPOONY's mixtapes.
+      A taste of the underground. Click a tape below.
     </div>
   </main>
 
@@ -273,29 +264,49 @@
     const iframeElement = document.getElementById("spoony-sc");
     const link = document.getElementById("glitchText");
     const box = document.getElementById("mainBox");
+    const chaos = document.getElementById("chaosLayer");
     const player = SC.Widget(iframeElement);
+
+    const symbols = "▒▓▖▚▀▐▌▄█◼︎░╳☠︎☢︎⛧⸸✦⟁⊹༒𓆩𖤐𓆏☰";
+
+    function getRandomSymbols(lines = 4, width = 32) {
+      let result = "";
+      for (let i = 0; i < lines; i++) {
+        let line = "";
+        for (let j = 0; j < width; j++) {
+          line += symbols[Math.floor(Math.random() * symbols.length)];
+        }
+        result += line + "\n";
+      }
+      return result;
+    }
 
     function playSpoony() {
       if (!isPlaying) {
         player.play();
         isPlaying = true;
         link.innerHTML = 'CLICK <span class="bold">TO PAUSE</span> MY <span class="bold">LATEST</span> SHIT';
-        link.setAttribute("data-glitch", "CLICK TO PAUSE MY LATEST SHIT");
         box.classList.add("playing");
+        chaos.innerText = getRandomSymbols();
+        chaosInterval = setInterval(() => {
+          chaos.innerText = getRandomSymbols();
+        }, 300);
       } else {
         player.pause();
         isPlaying = false;
         link.innerHTML = 'CLICK <span class="bold">HERE</span> TO HEAR MY <span class="bold">LATEST</span> SHIT';
-        link.setAttribute("data-glitch", "CLICK HERE TO HEAR MY LATEST SHIT");
         box.classList.remove("playing");
+        clearInterval(chaosInterval);
+        chaos.innerText = "";
       }
     }
 
     player.bind(SC.Widget.Events.FINISH, function () {
       isPlaying = false;
       link.innerHTML = 'CLICK <span class="bold">HERE</span> TO HEAR MY <span class="bold">LATEST</span> SHIT';
-      link.setAttribute("data-glitch", "CLICK HERE TO HEAR MY LATEST SHIT");
       box.classList.remove("playing");
+      clearInterval(chaosInterval);
+      chaos.innerText = "";
     });
   </script>
 </body>
