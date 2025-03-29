@@ -64,33 +64,40 @@
 
     .main-box {
       border: 2px solid #fff;
-      padding: 10px 20px;
+      padding: 10px 24px;
       display: inline-block;
       background: rgba(0, 0, 0, 0.4);
-      margin-bottom: 10px;
+      margin-bottom: 30px;
     }
 
     .maintext {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(28px, 5vw, 48px);
-      letter-spacing: 4px;
+      font-size: clamp(28px, 6vw, 48px);
+      letter-spacing: 6px;
       color: #fff;
+      text-decoration: none;
+      transition: 0.3s ease;
+      display: inline-block;
     }
 
-    .tagline {
-      font-weight: 300;
-      font-size: 14px;
+    .maintext:hover {
       color: #ccc;
-      max-width: 480px;
-      margin: 8px auto 0;
-      padding: 0 10px;
     }
 
     .album-section {
       max-width: 100%;
-      margin: 10px auto 0;
+      margin: 0 auto;
       padding: 0 20px;
       text-align: center;
+    }
+
+    .discography-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      color: #ccc;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
     }
 
     .album-grid {
@@ -98,7 +105,6 @@
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
-      margin-top: 10px;
     }
 
     .album-grid a {
@@ -181,14 +187,16 @@
 
   <main class="hero">
     <div class="main-box">
-      <div class="maintext">DISCOGRAPHY</div>
-    </div>
-    <div class="tagline">
-      A taste of the underground. Click a tape below.
+      <a href="https://soundcloud.com/spoondad" class="maintext" target="_blank">
+        CLICK HERE TO HEAR MY LATEST SHIT
+      </a>
     </div>
   </main>
 
   <section class="album-section">
+    <div class="discography-title">
+      A taste of the underground. Click a tape below.
+    </div>
     <div class="album-grid">
       <a href="https://spoonyduder.bandcamp.com/album/the-wolfgang-mixtape" target="_blank">
         <img src="https://f4.bcbits.com/img/a0771355221_10.jpg" alt="The Wolfgang Mixtape" />
