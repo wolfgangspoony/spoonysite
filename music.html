@@ -22,6 +22,24 @@
       border: 3px solid #fff;
       padding: 12px 24px;
       display: inline-block;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .main-box.playing {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4),
+                  0 0 40px rgba(255, 255, 255, 0.1) inset;
+      animation: pulse-glow 1.5s infinite alternate;
+    }
+
+    @keyframes pulse-glow {
+      0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2),
+                    0 0 30px rgba(255, 255, 255, 0.1) inset;
+      }
+      100% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.5),
+                    0 0 60px rgba(255, 255, 255, 0.2) inset;
+      }
     }
 
     .maintext {
@@ -148,7 +166,7 @@
   </header>
 
   <main class="hero">
-    <div class="main-box">
+    <div class="main-box" id="mainBox">
       <a href="#" class="maintext" onclick="playSpoony(); return false;">
         CLICK <span class="bold">HERE</span> TO HEAR MY <span class="bold">LATEST</span> SHIT
       </a>
@@ -202,6 +220,7 @@
     let isPlaying = false;
     const iframeElement = document.getElementById("spoony-sc");
     const link = document.querySelector(".maintext");
+    const box = document.getElementById("mainBox");
     const player = SC.Widget(iframeElement);
 
     function playSpoony() {
@@ -209,16 +228,19 @@
         player.play();
         isPlaying = true;
         link.innerHTML = 'CLICK <span class="bold">TO PAUSE</span> MY <span class="bold">LATEST</span> SHIT';
+        box.classList.add("playing");
       } else {
         player.pause();
         isPlaying = false;
         link.innerHTML = 'CLICK <span class="bold">HERE</span> TO HEAR MY <span class="bold">LATEST</span> SHIT';
+        box.classList.remove("playing");
       }
     }
 
     player.bind(SC.Widget.Events.FINISH, function () {
       isPlaying = false;
       link.innerHTML = 'CLICK <span class="bold">HERE</span> TO HEAR MY <span class="bold">LATEST</span> SHIT';
+      box.classList.remove("playing");
     });
   </script>
 </body>
