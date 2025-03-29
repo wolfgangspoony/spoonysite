@@ -27,7 +27,7 @@
       padding: 16px 24px;
       max-width: 1200px;
       margin: 0 auto;
-      mix-blend-mode: exclusion;
+      mix-blend-mode: exclusion; /* excursion effect restored */
     }
 
     .logo {
@@ -58,13 +58,13 @@
     }
 
     .hero {
-      padding: 40px 20px 10px;
+      padding: 60px 20px 20px;
       text-align: center;
     }
 
     .main-box {
       border: 2px solid #fff;
-      padding: 10px 24px;
+      padding: 12px 24px;
       display: inline-block;
       background: rgba(0, 0, 0, 0.4);
       margin-bottom: 30px;
@@ -72,12 +72,15 @@
 
     .maintext {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(28px, 6vw, 48px);
+      font-size: clamp(32px, 6vw, 56px);
       letter-spacing: 6px;
       color: #fff;
       text-decoration: none;
       transition: 0.3s ease;
-      display: inline-block;
+    }
+
+    .maintext span.bold {
+      font-weight: 700;
     }
 
     .maintext:hover {
@@ -92,12 +95,11 @@
     }
 
     .discography-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 18px;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 14px;
       color: #ccc;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
     }
 
     .album-grid {
@@ -168,7 +170,7 @@
       }
 
       .maintext {
-        font-size: clamp(22px, 6vw, 32px);
+        font-size: clamp(24px, 6vw, 36px);
       }
     }
   </style>
@@ -188,7 +190,7 @@
   <main class="hero">
     <div class="main-box">
       <a href="https://soundcloud.com/spoondad" class="maintext" target="_blank">
-        CLICK HERE TO HEAR MY LATEST SHIT
+        CLICK <span class="bold">HERE</span> TO HEAR MY <span class="bold">LATEST</span> SHIT
       </a>
     </div>
   </main>
