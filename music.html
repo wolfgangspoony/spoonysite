@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="css/style.css?v=1.0" />
 
   <style>
-    /* local overrides for music.html */
     main.hero {
       padding: 10px 20px !important;
       min-height: auto !important;
@@ -186,13 +185,32 @@
     <a href="https://soundcloud.com/spoondad">SoundCloud</a>
   </div>
 
-  <!-- Hidden audio player -->
-  <audio id="spoony-audio" src="songs/latest.wav"></audio>
+  <!-- Hidden SoundCloud Player -->
+  <iframe
+    id="spoony-sc"
+    width="0"
+    height="0"
+    style="display: none;"
+    allow="autoplay"
+    src="">
+  </iframe>
 
   <script>
+    let isPlaying = false;
+    const iframe = document.getElementById("spoony-sc");
+    const soundcloudUrl = "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/spoondad/yesterdaymorningmp3&auto_play=true";
+
     function playSpoony() {
-      const audio = document.getElementById("spoony-audio");
-      audio.play();
+      const link = document.querySelector(".maintext");
+      if (!isPlaying) {
+        iframe.src = soundcloudUrl;
+        isPlaying = true;
+        link.innerHTML = 'CLICK <span class="bold">TO PAUSE</span> MY <span class="bold">LATEST</span> SHIT';
+      } else {
+        iframe.src = ""; // stop playback
+        isPlaying = false;
+        link.innerHTML = 'CLICK <span class="bold">HERE</span> TO HEAR MY <span class="bold">LATEST</span> SHIT';
+      }
     }
   </script>
 </body>
