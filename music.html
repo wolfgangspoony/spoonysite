@@ -8,16 +8,15 @@
   <link rel="stylesheet" href="css/style.css?v=1.0" />
 
   <style>
-    /* local overrides */
-    body {
-      overflow-x: hidden;
+    /* local overrides for music.html */
+    main.hero {
+      padding: 10px 20px !important; /* Smaller top/bottom padding */
+      min-height: auto !important;   /* Remove forced height */
+      gap: 8px !important;           /* Tighten space between "Click Here" and tagline */
     }
 
-    .hero {
-      padding: 40px 20px 5px;
-      max-width: 70%;
-      margin: 0 auto;
-      text-align: center;
+    body {
+      overflow-x: hidden;
     }
 
     .main-box {
@@ -48,13 +47,13 @@
       font-size: 14px;
       color: #ccc;
       max-width: 480px;
-      margin: 16px auto 0;
+      margin: 0 auto;
       padding: 0 10px;
     }
 
     .album-section {
       max-width: 70%;
-      margin: 20px auto 0;
+      margin: 10px auto 0; /* Pull albums closer to tagline */
       text-align: center;
     }
 
@@ -102,7 +101,7 @@
       letter-spacing: 2px;
       flex-wrap: wrap;
       margin-top: 30px;
-      padding-bottom: 30px;
+      padding-bottom: 10px !important; /* Minimize bottom gap */
     }
 
     .link-bar a {
@@ -116,8 +115,8 @@
     }
 
     @media (max-height: 800px) {
-      .hero {
-        padding: 30px 20px 5px;
+      main.hero {
+        padding: 5px 20px !important;
       }
 
       .maintext {
@@ -131,7 +130,7 @@
 
       .link-bar {
         margin-top: 20px;
-        padding-bottom: 20px;
+        padding-bottom: 10px !important;
       }
     }
   </style>
