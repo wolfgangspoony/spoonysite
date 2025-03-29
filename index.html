@@ -10,16 +10,10 @@
     body {
       transition: background-image 0.4s ease;
       background-color: #111;
-      background-image: url('https://i.imgur.com/s4m8iC0.png'); /* Default (desktop) */
+      background-image: url('https://i.imgur.com/aF1FJMc.png'); /* Main background */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-    }
-
-    @media (max-width: 768px) {
-      body {
-        background-image: url('https://i.imgur.com/zH2sSpn.jpeg'); /* Mobile override */
-      }
     }
 
     .main-box {
@@ -71,12 +65,18 @@
     function glitchBackground() {
       const body = document.getElementById("pageBody");
 
-      // Use desktop image on toggle regardless of mobile override
       if (!toggled) {
-        body.style.backgroundImage = "url('https://i.imgur.com/s4m8iC0.png')";
+        if (window.innerWidth <= 768) {
+          // Mobile alt
+          body.style.backgroundImage = "url('https://i.imgur.com/zH2sSpn.jpeg')";
+        } else {
+          // Desktop alt
+          body.style.backgroundImage = "url('https://i.imgur.com/s4m8iC0.png')";
+        }
         toggled = true;
       } else {
-        body.style.backgroundImage = ""; // Will fall back to CSS (and mobile override still works)
+        // Return to main background
+        body.style.backgroundImage = "url('https://i.imgur.com/aF1FJMc.png')";
         toggled = false;
       }
     }
