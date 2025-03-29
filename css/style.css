@@ -16,7 +16,7 @@ html, body {
   position: relative;
   background-image: url("https://i.imgur.com/aF1FJMc.png");
   background-size: cover;
-  background-position: center;
+  background-position: center center; /* Fixed centering issue */
   background-repeat: no-repeat;
   background-attachment: fixed; /* This keeps the background fixed during scroll */
 }
@@ -31,6 +31,7 @@ html, body {
   position: relative;
   max-width: 1200px; /* Constrain width for larger screens */
   margin: 0 auto; /* Center it */
+  mix-blend-mode: exclusion; /* Added exclusion blend mode */
 }
 
 .logo {
@@ -67,18 +68,20 @@ nav a:hover {
   padding: 40px 20px;
   text-align: center;
   min-height: calc(100vh - 64px); /* Adjusted for header height */
-  gap: 24px;
+  gap: 32px; /* Increased gap between elements */
   z-index: 2;
   position: relative;
   max-width: 1200px; /* Constrain width for larger screens */
   margin: 0 auto; /* Center it */
+  transform: scale(1.2); /* Scale up the whole hero section */
+  mix-blend-mode: exclusion; /* Added exclusion blend mode */
 }
 
 .text-stack {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 16px; /* Increased gap */
 }
 
 .pretext {
@@ -154,6 +157,10 @@ nav a:hover {
 @media (max-width: 768px) {
   body {
     background-image: url("https://i.imgur.com/aF1FJMc.png");
+  }
+  
+  .hero {
+    transform: scale(1); /* Reset scale for mobile */
   }
 
   .maintext {
