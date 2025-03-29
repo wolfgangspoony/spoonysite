@@ -185,33 +185,41 @@
     <a href="https://soundcloud.com/spoondad">SoundCloud</a>
   </div>
 
-  <!-- Hidden SoundCloud Player -->
+  <!-- SoundCloud API -->
+  <script src="https://w.soundcloud.com/player/api.js"></script>
+
+  <!-- Hidden SoundCloud iframe -->
   <iframe
     id="spoony-sc"
     width="0"
     height="0"
-    style="display: none;"
+    style="display:none;"
     allow="autoplay"
-    src="">
+    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/spoondad/yesterdaymorningmp3&auto_play=false">
   </iframe>
 
   <script>
     let isPlaying = false;
-    const iframe = document.getElementById("spoony-sc");
-    const soundcloudUrl = "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/spoondad/yesterdaymorningmp3&auto_play=true";
+    const iframeElement = document.getElementById("spoony-sc");
+    const link = document.querySelector(".maintext");
+    const player = SC.Widget(iframeElement);
 
     function playSpoony() {
-      const link = document.querySelector(".maintext");
       if (!isPlaying) {
-        iframe.src = soundcloudUrl;
+        player.play();
         isPlaying = true;
         link.innerHTML = 'CLICK <span class="bold">TO PAUSE</span> MY <span class="bold">LATEST</span> SHIT';
       } else {
-        iframe.src = ""; // stop playback
+        player.pause();
         isPlaying = false;
         link.innerHTML = 'CLICK <span class="bold">HERE</span> TO HEAR MY <span class="bold">LATEST</span> SHIT';
       }
     }
+
+    player.bind(SC.Widget.Events.FINISH, function () {
+      isPlaying = false;
+      link.innerHTML = 'CLICK <span class="bold">HERE</span> TO HEAR MY <span class="bold">LATEST</span> SHIT';
+    });
   </script>
 </body>
 </html>
