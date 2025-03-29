@@ -244,3 +244,11 @@ nav a:hover {
   font-size: 14px;
   letter-spacing: 2px;
 }
+html {
+  font-size: 120%; /* Makes all rem-based and scalable units bigger */
+}
+
+.container {
+  transform: scale(1.2);
+  transform-origin: top center;
+}
