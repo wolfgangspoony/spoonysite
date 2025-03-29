@@ -7,18 +7,98 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@300;400;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css?v=1.0" />
   <style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: #fff;
+      background-color: #000;
+      background-image: url("https://i.imgur.com/aF1FJMc.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      overflow-x: hidden;
+      margin: 0;
+    }
+
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      mix-blend-mode: exclusion;
+    }
+
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 16px;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #fff;
+      letter-spacing: 1px;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #ccc;
+    }
+
     .hero {
-      padding-top: 60px;
-      padding-bottom: 40px;
+      padding: 60px 20px 40px;
+      max-width: 70%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .main-box {
+      border: 3px solid #fff;
+      padding: 12px 24px;
+      display: inline-block;
+    }
+
+    .maintext {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(40px, 6vw, 64px);
+      letter-spacing: 6px;
+      color: #fff;
+    }
+
+    .maintext span.bold {
+      font-weight: 700;
+    }
+
+    .tagline {
+      font-weight: 300;
+      font-size: 16px;
+      color: #ccc;
+      max-width: 480px;
+      margin: 32px auto 0;
+      padding: 0 10px;
+    }
+
+    .album-section {
+      max-width: 70%;
+      margin: 60px auto 0;
+      text-align: center;
     }
 
     .album-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 24px;
-      margin-top: 48px;
-      width: 100%;
-      max-width: 800px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 36px;
+      margin-top: 36px;
     }
 
     .album-grid a {
@@ -26,36 +106,67 @@
       color: #fff;
       text-decoration: none;
       transition: transform 0.2s ease, opacity 0.2s ease;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
     }
 
     .album-grid img {
       width: 100%;
       border: 2px solid #fff;
       opacity: 0.5;
+      transition: 0.3s ease;
     }
 
     .album-grid a:hover img {
-      opacity: 0.75;
-      transform: scale(1.03);
+      opacity: 0.85;
+      transform: scale(1.04);
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
     }
 
     .album-grid div {
-      margin-top: 12px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 14px;
-      letter-spacing: 2px;
+      margin-top: 10px;
+      font-size: 15px;
       color: #ccc;
     }
 
     .link-bar {
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      flex-wrap: wrap;
       margin-top: 60px;
+      padding-bottom: 40px;
     }
 
-    @media (max-height: 800px) {
-      .hero {
-        transform: scale(1);
-        padding-top: 40px;
-        padding-bottom: 20px;
+    .link-bar a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .link-bar a:hover {
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      .hero,
+      .album-section {
+        max-width: 90%;
+      }
+
+      .maintext {
+        font-size: clamp(30px, 8vw, 42px);
+      }
+
+      .album-grid {
+        gap: 24px;
+      }
+
+      .album-grid img {
+        width: 100%;
       }
     }
   </style>
@@ -73,18 +184,17 @@
   </header>
 
   <main class="hero">
-    <div class="text-stack">
-      <div class="main-box">
-        <a href="https://soundcloud.com/spoondad" class="maintext" style="text-decoration: none; color: #fff;">
-          CLICK HERE TO HEAR MY LATEST SHIT
-        </a>
-      </div>
+    <div class="main-box">
+      <a href="https://soundcloud.com/spoondad" class="maintext" style="text-decoration: none;">
+        CLICK <span class="bold">HERE</span> TO HEAR MY <span class="bold">LATEST</span> SHIT
+      </a>
     </div>
-
-    <div class="tagline" style="margin-top: 32px;">
+    <div class="tagline">
       A taste of the underground. Click a tape below.
     </div>
+  </main>
 
+  <section class="album-section">
     <div class="album-grid">
       <a href="https://spoonyduder.bandcamp.com/album/the-wolfgang-mixtape" target="_blank">
         <img src="https://f4.bcbits.com/img/a0771355221_10.jpg" alt="The Wolfgang Mixtape" />
@@ -103,12 +213,12 @@
         <div>Mixtape Four</div>
       </a>
     </div>
+  </section>
 
-    <div class="link-bar">
-      <a href="https://www.tiktok.com/@5poon4dud3r">TikTok</a>
-      <a href="https://www.youtube.com/@spoonyduder">YouTube</a>
-      <a href="https://soundcloud.com/spoondad">SoundCloud</a>
-    </div>
-  </main>
+  <div class="link-bar">
+    <a href="https://www.tiktok.com/@5poon4dud3r">TikTok</a>
+    <a href="https://www.youtube.com/@spoonyduder">YouTube</a>
+    <a href="https://soundcloud.com/spoondad">SoundCloud</a>
+  </div>
 </body>
 </html>
