@@ -10,9 +10,9 @@
   <style>
     /* local overrides for music.html */
     main.hero {
-      padding: 10px 20px !important; /* Smaller top/bottom padding */
-      min-height: auto !important;   /* Remove forced height */
-      gap: 8px !important;           /* Tighten space between "Click Here" and tagline */
+      padding: 10px 20px !important;
+      min-height: auto !important;
+      gap: 8px !important;
     }
 
     body {
@@ -32,6 +32,7 @@
       color: #fff;
       text-decoration: none;
       transition: 0.3s ease;
+      cursor: pointer;
     }
 
     .maintext span.bold {
@@ -53,7 +54,7 @@
 
     .album-section {
       max-width: 70%;
-      margin: 10px auto 0; /* Pull albums closer to tagline */
+      margin: 10px auto 0;
       text-align: center;
     }
 
@@ -101,7 +102,7 @@
       letter-spacing: 2px;
       flex-wrap: wrap;
       margin-top: 30px;
-      padding-bottom: 10px !important; /* Minimize bottom gap */
+      padding-bottom: 10px !important;
     }
 
     .link-bar a {
@@ -142,16 +143,14 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="music.html">Music</a></li>
-<li><a href="aboutme.html">AAAAAH WTF</a></li>
-
-
+        <li><a href="aboutme.html">AAAAAH WTF</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="hero">
     <div class="main-box">
-      <a href="https://soundcloud.com/spoondad/yesterdaymorningmp3" class="maintext">
+      <a href="#" class="maintext" onclick="playSpoony(); return false;">
         CLICK <span class="bold">HERE</span> TO HEAR MY <span class="bold">LATEST</span> SHIT
       </a>
     </div>
@@ -186,5 +185,15 @@
     <a href="https://www.youtube.com/@spoonyduder">YouTube</a>
     <a href="https://soundcloud.com/spoondad">SoundCloud</a>
   </div>
+
+  <!-- Hidden audio player -->
+  <audio id="spoony-audio" src="songs/latest.mp3"></audio>
+
+  <script>
+    function playSpoony() {
+      const audio = document.getElementById("spoony-audio");
+      audio.play();
+    }
+  </script>
 </body>
 </html>
