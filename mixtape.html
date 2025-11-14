@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Main Mixtape | SPOONY DUDER</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=1.0" />
+</head>
+<body class="mixtape-page">
+  <header class="site-header">
+    <div class="logo">SPOONY DUDER</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="mixtape.html" class="active">Mixtape</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="mixtape-hero">
+    <div class="mixtape-callout">
+      <p class="eyebrow">MAINMIXTAPE</p>
+      <h1>Streaming straight from the Backblaze vault</h1>
+      <p>
+        Every track on this page is sourced directly from the <strong>MAINMIXTAPE</strong> Backblaze bucket.
+        Keep the files in sync with <code>./scripts/upload_mixtape.sh</code>, grab each <code>b2 file-url</code>, and the player will keep serving
+        the freshest versions.
+      </p>
+      <div class="mixtape-meta">
+        <span class="meta-chip">Bucket: MAINMIXTAPE</span>
+        <span class="meta-chip">Status: Live</span>
+        <span class="meta-chip">Backend: Backblaze B2</span>
+      </div>
+    </div>
+    <div class="mixtape-cta">
+      <p>
+        Need help refreshing the track links? Update <code>scripts/mixtape-tracks.js</code> with the URLs returned by
+        <code>b2 file-url</code>, then redeploy.
+      </p>
+      <a class="cta-link" href="docs/mixtape-hosting.md">Review the upload guide →</a>
+    </div>
+  </main>
+
+  <section class="mixtape-player">
+    <div class="section-heading">
+      <h2>Main Mixtape Tracklist</h2>
+      <p>
+        The player renders whatever data lives in <code>scripts/mixtape-tracks.js</code>, so once you drop new files into Backblaze you can swap links
+        without editing this page.
+      </p>
+    </div>
+    <div class="tracklist" id="trackList">
+      <p class="mixtape-empty">Loading hosted tracks…</p>
+    </div>
+  </section>
+
+  <section class="mixtape-note">
+    <h3>How it works</h3>
+    <ol>
+      <li>Upload or sync the latest masters to <code>songs/mixtape/</code> and run <code>./scripts/upload_mixtape.sh</code>.</li>
+      <li>Run <code>b2 file-url MAINMIXTAPE your-track.mp3</code> for every file to get the streaming links.</li>
+      <li>Paste the URLs (and any metadata like durations) into <code>scripts/mixtape-tracks.js</code>.</li>
+      <li>Deploy the site. This page pulls the config and starts streaming from Backblaze instantly.</li>
+    </ol>
+    <p>Because playback happens straight from Backblaze, you only have to update the track config when the mixtape changes.</p>
+  </section>
+
+  <script src="scripts/mixtape-tracks.js"></script>
+  <script src="scripts/mixtape-player.js"></script>
+</body>
+</html>
