@@ -246,3 +246,234 @@ nav a:hover {
   font-size: 14px;
   letter-spacing: 2px;
 }
+
+/* MIXTAPE PAGE */
+body.mixtape-page {
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.96), rgba(25, 25, 25, 0.9)), url('https://i.imgur.com/aF1FJMc.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.mixtape-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 60px 20px 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.mixtape-callout h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 6vw, 64px);
+  margin-bottom: 12px;
+}
+
+.mixtape-callout p {
+  color: #d7d7d7;
+  line-height: 1.6;
+}
+
+.eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ff4d6d;
+  margin-bottom: 12px;
+}
+
+.mixtape-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.meta-chip {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.mixtape-cta {
+  border-left: 3px solid #ff4d6d;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.mixtape-cta p {
+  margin-bottom: 12px;
+  color: #f1f1f1;
+  line-height: 1.6;
+}
+
+.cta-link {
+  color: #ff9a62;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.mixtape-player {
+  max-width: 960px;
+  margin: 30px auto 0;
+  padding: 0 20px 40px;
+}
+
+.section-heading {
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 4vw, 40px);
+}
+
+.section-heading p {
+  color: #cfcfcf;
+  max-width: 720px;
+  line-height: 1.5;
+}
+
+.tracklist {
+  display: grid;
+  gap: 16px;
+}
+
+.track-card {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.35);
+  padding: 18px;
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+}
+
+.track-headline {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.track-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: #ff4d6d;
+}
+
+.track-title-wrap {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.track-title-wrap h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.track-duration {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.track-description {
+  color: #d8d8d8;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.track-status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.track-status.online {
+  background: rgba(76, 226, 153, 0.15);
+  color: #4ce299;
+}
+
+.track-status.offline {
+  background: rgba(255, 77, 109, 0.2);
+  color: #ff4d6d;
+}
+
+.track-card audio {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.track-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.download-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.download-link.disabled {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.track-placeholder {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.mixtape-note {
+  max-width: 960px;
+  margin: 0 auto 80px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 12px;
+}
+
+.mixtape-note h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.mixtape-note ol {
+  margin-left: 20px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.mixtape-empty {
+  color: #ccc;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .track-title-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mixtape-cta {
+    border-left: none;
+    border-top: 3px solid #ff4d6d;
+  }
+}
